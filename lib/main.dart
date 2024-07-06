@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shamo/pages/signin_page.dart';
+import 'package:shamo/pages/splash_page.dart';
 import 'dart:ui';
 import 'theme.dart';
 
@@ -12,26 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'Hello, World!!',
-          style: secondaryTextStyle.copyWith(
-            fontSize: 24,
-            fontWeight: semiBold,
-          ),
-        )
-      )
+      routes: {
+        '/': (context) => SplashPage(),
+        '/signin': (context) => SigninPage(),
+      },
     );
   }
 }
